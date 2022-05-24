@@ -15,7 +15,7 @@ Our group will create an application that connects animal lovers to adoptable pe
 
 ## Wireframe
 
-![Wireframe](https://https://github.com/israel386/furever-home-finder/assets/images/wireframe.png)
+![Wireframe](https://github.com/israel386/furever-home-finder/blob/63b058f462b27f29ab86e40a502ad65ad50de8e5/assets/images/wireframe.png)
 
 ## User Story
 
