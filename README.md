@@ -4,13 +4,18 @@
 
 Our group will create an application that connects animal lovers to adoptable pets by location and type.
 
-[See Deployed Application](https://xndroli.github.io/work-day-scheduler/)
+[See Deployed Application](https://israel386.github.io/furever-home-finder/)
 
 ## Table of Contents
 
+* [Wireframe](#Wireframe)
 * [User-Story](#User-Story)
 * [Link-to-Deployed-Application](#Link-to-Deployed-Application)
 * [Integrated-APIs](#Integrated-APIs)
+
+## Wireframe
+
+![Wireframe](https://https://github.com/israel386/furever-home-finder/assets/images/wireframe.png)
 
 ## User Story
 
