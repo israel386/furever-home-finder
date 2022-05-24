@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Open+Sans:ital,wght@0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Open+Sans:ital,wght@0,700;1,400&family=Titan+One&display=swap');
+h1 {
+    font-family: 'titan one', cursive;
+}
+h5 {
+    font-family: 'grape nuts', cursive;
+}
+#available-dogs img{
+    max-width: 200px;
+    padding: 10px;
+    border-radius: 10%;
+    
+}
+#available-cats img{
+    max-width: 200px;
+    padding: 10px;
+    border-radius: 10%;
+}
+
+#contact-us ul{
+    display: flex;
+}
+#contact-us ul li{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: auto;
+    padding: 5px;
+}
+
