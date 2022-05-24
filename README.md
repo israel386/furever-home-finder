@@ -10,7 +10,7 @@ Our group will create an application that connects animal lovers to adoptable pe
 
 * [User-Story](#User-Story)
 * [Link-to-Deployed-Application](#Link-to-Deployed-Application)
-* [Integrated-APIs] (#Integrated-APIs)
+* [Integrated-APIs](#Integrated-APIs)
 
 ## User Story
 
