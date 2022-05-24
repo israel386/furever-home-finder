@@ -28,7 +28,7 @@ SO THAT they can provide a home for a sheltered animal
 
 ## Integrated APIs
 
-![Integrated-APIs](https://www.petfinder.com/developers/v2/docs/ "Petfinder API")
+[Integrated-APIs](https://www.petfinder.com/developers/v2/docs/ "Petfinder API")
 
 ---
 © 2022 Project 1 Group 3. Confidential and Proprietary. All Rights Reserved.
