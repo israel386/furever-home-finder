@@ -20,7 +20,7 @@
     </header>
     <div id="petPhotos">
 
-    </div>
+
 
         <div id="navMenu" class="navBar">
             <nav>
@@ -43,28 +43,43 @@
                 </ul>
             </nav>
         </div>
+       
 
-    <div id="about-us">
-        <section class="center-align">
+
+    <div class="container row"  >     
+    <div id="about-us" class="col s3">
+        <section class="card center-align">
             <h2>About Us</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe facere consectetur nesciunt unde vitae quia corporis delectus quis. Laboriosam dolore eius corporis molestiae magnam reprehenderit quibusdam possimus et omnis. Modi!</p>
         </section>    
     </div>
-    <div id="animal-search">
+        <div id="animal-search"  class="form col s9 card container">
+            <h4>Find a Pet Near You!</h4>
+            <input id="zip-code" placeholder="Zip" type="text">
+                
+            </input>
+            <label>
+                <input id=dogsButton type="radio"><span>Dogs</span>
+            </label>
+            <label>
+                <input id=catsButton type="radio"><span>Cats</span>
+            </label> 
+            <button class="button" type="submit">Search</button>
+        </div>     
+</div>
 
-    </div>
     <div id=available-dogs class="container center-align">
             <h2>Available Dogs</h2>
-            <img src="./dogplaceholder2.jpg">
-            <img src="./dogplaceholder4.jpg">
-            <img src="./dogplaceholder5.jpg">
+            <img src="placeholder-images/dogplaceholder2.jpg">
+            <img src="placeholder-images/dogplaceholder4.jpg">
+            <img src="placeholder-images/dogplaceholder5.jpg">
           </div>
     </div>
     <div id="available-cats" class="container center-align">
         <h2>Available Cats</h2>
-        <img src="./catplaceholder1.jpg">
-        <img src="./catplaceholder2.jpg">
-        <img src="./catplaceholder3.jpg">   
+        <img src="placeholder-images/catplaceholder1.jpg">
+        <img src="placeholder-images/catplaceholder2.jpg">
+        <img src="placeholder-images/catplaceholder3.jpg">   
 
     </div>
     <div id="contact-us">
@@ -77,11 +92,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="assets/js/script.js"></script>
-    <script>
-        $(document).ready(function(){
-    $('#dogCarousel').carousel();
-  });
-    </script>
 </body>
 
 </html>
