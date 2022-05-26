@@ -1,3 +1,5 @@
+var ex = document.getElementById("cat-fact")
+
 fetch(
     // TODO: Add query parameters to the URL such that the number of issues returned is limited to 10.
     // TODO: Add a `sort` parameter to sort the issues by `createdAt` in descending order.
@@ -12,10 +14,11 @@ fetch(
         for (var i = 0; i < data.length; i++) {
             var catFact = data[i].text
 
-            var ex = document.querySelector("#available-dogs")
-            var sdf = document.createElement("div")
+            var tr = document.createElement("p")
 
-            sdf.innerText = catFact;
+            tr.textContent = data[i].text
+
+            ex.append(tr);
 
 
         }
