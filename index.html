@@ -26,10 +26,7 @@
             <nav>
                 <ul>
                     <li>
-                        <a href="#about-us">About Us</a>
-                    </li>
-                    <li>
-                        <a href="#animal-search">Animal Search</a>
+                        <a href="about.html">About Us</a>
                     </li>
                     <li>    
                         <a href="#available-dogs">Available Dogs</a>
@@ -37,23 +34,22 @@
                     <li>    
                         <a href="#available-cats">Available Cats</a>
                     </li>
-                    <li>    
-                        <a href="#contact-us">Contact Us</a>
-                    </li>    
                 </ul>
             </nav>
         </div>
-       
+        <a class="waves-effect waves-light btn modal-trigger" href="dogFacts">Fun Dog Fact</a>
+        <div id="dogFacts" class="modal">
+            <div class="modal-content">
+              <h4>Fun Dog Facts</h4>
+              <p>Dogs are cute</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+          </div>
 
-
-    <div class="container row"  >     
-    <div id="about-us" class="col s3">
-        <section class="card center-align">
-            <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Saepe facere consectetur nesciunt unde vitae quia corporis delectus quis. Laboriosam dolore eius corporis molestiae magnam reprehenderit quibusdam possimus et omnis. Modi!</p>
-        </section>    
-    </div>
-        <div id="animal-search"  class="form col s9 card container">
+    <div class="container row center-align"  >     
+        <div id="animal-search"  class="card col s9 container">
             <h4>Find a Pet Near You!</h4>
             <input id="zip-code" placeholder="Zip" type="text">
                 
@@ -64,33 +60,18 @@
             <label>
                 <input id=catsButton type="radio"><span>Cats</span>
             </label> 
-            <button class="button" type="submit">Search</button>
+            <button id=searchButton class="waves-effect waves-light btn" type="submit">Search</button>
         </div>     
 </div>
-
-    <div id=available-dogs class="container center-align">
-            <h2>Available Dogs</h2>
-            <img src="placeholder-images/dogplaceholder2.jpg">
-            <img src="placeholder-images/dogplaceholder4.jpg">
-            <img src="placeholder-images/dogplaceholder5.jpg">
-          </div>
-    </div>
-    <div id="available-cats" class="container center-align">
-        <h2>Available Cats</h2>
-        <img src="placeholder-images/catplaceholder1.jpg">
-        <img src="placeholder-images/catplaceholder2.jpg">
-        <img src="placeholder-images/catplaceholder3.jpg">   
-
-    </div>
-    <div id="contact-us">
+    <div id="animals-list" class="list">
         <ul>
-            <li>email</li>
-            <li>phone</li>
-            <li>git repo?</li>
+            <li class="animal"></li>
         </ul>
+
+    </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/11a0ffac50.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
 

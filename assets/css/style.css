@@ -1,10 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Open+Sans:ital,wght@0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Open+Sans:ital,wght@0,700;1,400&family=Titan+One&display=swap');
 h1 {
-    font-family: 'titan one', cursive;
+    font-family: 'arvo', serif;
+
 }
-h5 {
+h5, h2, h4{
     font-family: 'grape nuts', cursive;
+}
+body{
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(./andrew-s-ouo1hbizWwo-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+}
+#animal-search{
+ padding: 10px;
+ background-position: center;
+ background-size: cover;
+ width: 500px;
+ height: 300px;
+}
+
+#zip-code{
+    width: 300px;
 }
 #available-dogs img{
     max-width: 200px;
@@ -32,5 +49,27 @@ h5 {
 #about-us{
     max-width: 300px;
 }
-#animal-search{
+.animalInfo{
+    margin: auto;
+    max-width: 250px;
+    padding: 10px;
+    background-color: lightgrey;
+    border-radius: 10%;
+}
+.animalInfo img{
+    max-width: 200px;
+}
+
+#about-text{
+    margin: auto;
+    margin-top: 200px;
+    padding: 10px;
+    background-color: rgb(223, 217, 217);
+    border-radius: 10%;
+    max-width: fit-content;
+}
+#about-page{
+    background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(./sadshelter.jpg);
+    background-position: center;
+    background-size:cover;
 }
