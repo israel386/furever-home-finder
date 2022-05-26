@@ -1,19 +1,68 @@
-var apiToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJkS2xpMjdZVk4xWHc2TEh2TjlOQXloWVI1ZEV5ZFZ4WFhvakluRnF1ajJaSXlldGZDNiIsImp0aSI6IjJmOTU4MzYwODZmZGIzMDNiMTU5OGFmOWEyN2MxMzA5MTY5YzhiOTlhOWU3MzgyYTIxOWVjZmEwZTU0OWI3NzhmNGM4MzQ4YmNhOTc4ZjNjIiwiaWF0IjoxNjUzNTIxMjgzLCJuYmYiOjE2NTM1MjEyODMsImV4cCI6MTY1MzUyNDg4Mywic3ViIjoiIiwic2NvcGVzIjpbXX0.Rlzzl3VYSrrsm-YBZwUb1queWS65wHbQGzeXeoyov3ysZO6y6GfQ6uS72s0maB9m8EcoWAJLt9cbfr_Bb_A-kNGMF5-7jOP56WuNGBwwjSx_9PfW3MpPAO26k6RV3-oo5GojqRh3WWc6nUYpOw0x9OAI3fExVT6EBAT6og1UO3XRTGRKX06_Ke4HTLLhFL5eYU0H53O8Y_R8cyW5GtNLzkeizIEx3UJnLyloKJWHwykyDzp3qlAAd5RG1IsikGtdOZGEy_6yNYlU5oQpypWnnhZpsqmENB3u2rWL6q7XvhMJdPJ8wWWPvDjxdtc3Smu8Sa-1TNuB8ZvvWvEBOSzGlg'; // assign our key to a variable, easier to read
+var key = 'dKli27YVN1Xw6LHvN9NAyhYR5dEydVxXXojInFquj2ZIyetfC6'
+var secret = 'x2rtjtX1uuWWLBsSomBt1QHVNtXtjTBnL5EoGWLr'
+var token, tokenType;
+
+function getAccessToken () {
+    fetch('https://api.petfinder.com/v2/oauth2/token', {
+        method: 'POST',
+        body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    }).then(function (response) {
+        // Return the response as JSON
+        return response.json();
+    }).then(function (data) {
+        // Log the API data
+        console.log('token', data);
+        // Store token data
+        token = data.access_token;
+        tokenType = data.token_type;
+    }).catch(function(err) {
+        console.log(err);
+    });
+};
+
+setInterval(function(){refreshAccessToken(); }, 1800000);
+
+function refreshAccessToken() {
+    fetch('https://api.petfinder.com/v2/oauth2/token', {
+        method: 'POST',
+        body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    }).then(function (response) {
+        // Return the response as JSON
+        return response.json();
+    }).then(function (data) {
+        // Log the API data
+        console.log('token', data);
+        // Store token data
+        token = data.access_token;
+        tokenType = data.token_type;
+    }).catch(function(err) {
+        console.log(err);
+    });
+}
 
 // the next line and function set up the button in our html to be clickable and reactive 
 document.addEventListener('DOMContentLoaded', bindButtons);
 
-function bindButtons(){
-	document.getElementById('submitZip').addEventListener('click', function(event){
-		event.preventDefault();
-		var zip = document.getElementById('zip').value; // this line gets the zip code from the form entry
-		var url = 'https://api.petfinder.com/v2/animals';
-		
-		fetch(url, {
+var availabledogsEl = document.querySelector('#available-dogs');
+var availablecatsEl = document.querySelector('#available-cats');
+
+function bindButtons() {
+    document.getElementById('searchZip').addEventListener('click', function(event) {
+        event.preventDefault();
+        var zip = document.getElementById('zip-code').value; // this line gets the zip code from the form entry
+        var url = 'https://api.petfinder.com/v2/animals';
+            
+        fetch(url, {
 			method: "GET", 
 			headers: {
 				'Content-Type': 'application/json',
-				Authorization: 'Bearer ' + apiToken
+				Authorization: 'Bearer ' + token
 			},
 			
 		}).then(function(response) {
@@ -21,29 +70,13 @@ function bindButtons(){
 		}).then(function(data) {
 			console.log(data);
 			for (var i = 0; i <data.length; i++) {
-				var catName = data[i].petfinder.pet.name.$t;
-				var img = data[i].petfinder.pet.media.photos.photo[0].$t;
-				var id = data[i].petfinder.pet.id.$t;
-	
-				var newName = document.createElement('a');
-				var newDiv = document.getElementById('animals-list');
-				newName.textContent = catName;
-				newName.href = 'https://www.petfinder.com/v2/animals' + id;
-	
-				var newImg = document.createElement('img');
-				newImg.src = img;
-				
-				var list = document.createElement("ul");
-				list.setAttribute("id", "List");
-				document.body.appendChild(list);
-	
-				newDiv.appendChild(newName);
-				list.appendChild(newDiv);
-				list.appendChild(newImg);
+                var availabledogsEl = data[i].name;
+                var id = data[i].id;
 			}
 		}).catch(function(err) {
 			console.log(err);
 		})
-		})
+    })
+};
 
-}
+getAccessToken();
