@@ -23,43 +23,13 @@ body{
 #zip-code{
     width: 300px;
 }
-#available-dogs img{
-    max-width: 200px;
-    padding: 10px;
-    border-radius: 10%;
-    
+#searchButton{
+    margin-top: 20px;
 }
-#available-cats img{
-    max-width: 200px;
-    padding: 10px;
-    border-radius: 10%;
+#dogFacts{
+    max-width: 400px;
+    padding: 20px;
 }
-
-#contact-us ul{
-    display: flex;
-}
-#contact-us ul li{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: auto;
-    padding: 5px;
-}
-
-#about-us{
-    max-width: 300px;
-}
-.animalInfo{
-    margin: auto;
-    max-width: 250px;
-    padding: 10px;
-    background-color: lightgrey;
-    border-radius: 10%;
-}
-.animalInfo img{
-    max-width: 200px;
-}
-
 #about-text{
     margin: auto;
     margin-top: 200px;
