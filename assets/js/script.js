@@ -3,6 +3,11 @@ var key = 'dKli27YVN1Xw6LHvN9NAyhYR5dEydVxXXojInFquj2ZIyetfC6'
 var secret = 'x2rtjtX1uuWWLBsSomBt1QHVNtXtjTBnL5EoGWLr'
 var token, tokenType;
 
+document.addEventListener('DOMContentLoaded', function() {
+  var elems = document.querySelectorAll('.modal');
+  var instances = M.Modal.init(elems);
+});
+
 function getAccessToken () {
     fetch('https://api.petfinder.com/v2/oauth2/token', {
         method: 'POST',
