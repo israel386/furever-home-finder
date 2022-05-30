@@ -3,13 +3,12 @@ var key = 'dKli27YVN1Xw6LHvN9NAyhYR5dEydVxXXojInFquj2ZIyetfC6'
 var secret = 'x2rtjtX1uuWWLBsSomBt1QHVNtXtjTBnL5EoGWLr'
 var token, tokenType;
 var tag = document.createElement("p")
-var element = document.getElementById("cat-fact");
-element.appendChild(tag)
 
 document.addEventListener('DOMContentLoaded', function () {
 	var elems = document.querySelectorAll('.modal');
 	var instances = M.Modal.init(elems);
-
+	var removeFact = document.getElementById("#cat-fact")
+	removeFact.parentElement.removeChild(tag)
 });
 
 function getCatFact() {
@@ -23,14 +22,16 @@ function getCatFact() {
 			console.log(data);
 			for (var i = 0; i < data.length; i++) {
 
+				var tag = document.createElement("p")
+
 				tag.textContent = data[Math.floor(Math.random() * data.length)].text
 
 				// var text = document.createTextNode(data[Math.floor(Math.random() * data.length)].text);
 				// tag.appendChild(text);
-				var removeFact = document.getElementById("#cat-fact")
-				removeFact.parentElement.removeChild(tag)
 
-				return ++i
+				var element = document.getElementById("cat-fact");
+				element.appendChild(tag)
+				return
 			}
 		});
 }
