@@ -1,9 +1,17 @@
-var ex = document.getElementById("cat-fact")
-function getFact() {
+var tag = document.createElement("p")
+
+document.addEventListener('DOMContentLoaded', function () {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+    var factBtn = document.getElementById("cat-fact-btn")
+
+    factBtn.addEventListener('click', getCatFact)
+    modalCloseBtn.addEventListener("click")
+
+});
+
+function getCatFact() {
     fetch(
-        // TODO: Add query parameters to the URL such that the number of issues returned is limited to 10.
-        // TODO: Add a `sort` parameter to sort the issues by `createdAt` in descending order.
-        // Hint: use & to join multiple query parameters. Use `=` to join key and value.
         'https://cat-fact.herokuapp.com/facts'
     )
         .then(function (response) {
@@ -12,17 +20,9 @@ function getFact() {
         .then(function (data) {
             console.log(data);
             for (var i = 0; i < data.length; i++) {
-                var catFact = data[i].text
 
-                // var tr = document.createElement("p")
-                // var tr
-
-                // tr.textContent = data[i].text
-
-                window.alert(catFact)
-                return
-
+                var element = document.getElementById("cat-fact");
+                element.textContent = data[Math.floor(Math.random() * data.length)].text
             }
         });
 }
-getFact()
