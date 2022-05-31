@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var factBtn = document.getElementById("cat-fact-btn")
 
     factBtn.addEventListener('click', getCatFact)
-    modalCloseBtn.addEventListener("click")
 
 });
 
