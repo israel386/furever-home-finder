@@ -14,8 +14,8 @@
 <body>
     <header>
         <div class="container">
-        <h1 class="center-align">Furever Home Finder</h1>
-        <h5 class="center-align">Finding Furry Friends Their Happily Ever After</h5>
+            <h1 class="center-align">Furever Home Finder</h1>
+            <h5 class="center-align">Finding Furry Friends Their Happily Ever After</h5>
         </div>
     </header>
     <div id="petPhotos">
@@ -28,50 +28,51 @@
                     <li>
                         <a href="about.html">About Us</a>
                     </li>
-                    <li>    
+                    <li>
                         <a href="#available-dogs">Available Dogs</a>
                     </li>
-                    <li>    
+                    <li>
                         <a href="#available-cats">Available Cats</a>
                     </li>
                 </ul>
             </nav>
         </div>
-        <a class="waves-effect waves-light btn modal-trigger" href="#dogFacts">Fun Dog Fact</a>
+        <a id="cat-fact-btn" class="waves-effect waves-light btn modal-trigger" href="#dogFacts">Fun Cat Fact</a>
         <div id="dogFacts" class="modal">
             <div class="modal-content">
-              <h4 class="center-align">Fun Dog Facts</h4>
-              <p class="center-align">Dogs are cute</p>
+                <h4 class="center-align">Fun Cat Facts</h4>
+                <div id="cat-fact" class="center-align">
+                </div>
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
             </div>
-          </div>
+        </div>
 
-    <div class="container row center-align"  >     
-        <div id="animal-search"  class="card col s9 container">
-            <h4>Find a Pet Near You!</h4>
-            <input id="zip-code" placeholder="Zip" type="text">
-                
-            </input>
-            <br>
-            <label>
-                <input id=dogsButton type="radio"><span>Dogs<i class="fa-solid fa-dog"></i></span>
-            </label>
-            <br>
-            <label>
-                <input id=catsButton type="radio"><span>Cats</span><i class="fa-solid fa-cat"></i>
-            </label>
-            <br> 
-            <button id=searchButton class="waves-effect waves-light btn" type="submit">Search</button>
-        </div>     
-</div>
-    <div id="animals-list" class="list">
-        <ul>
-            <li class="animal"></li>
-        </ul>
+        <div class="container row center-align">
+            <div id="animal-search" class="card col s9 container">
+                <h4>Find a Pet Near You!</h4>
+                <input id="zip-code" placeholder="Zip" type="text">
 
-    </div>
+                </input>
+                <br>
+                <label>
+                    <input id=dogsButton type="radio"><span>Dogs<i class="fa-solid fa-dog"></i></span>
+                </label>
+                <br>
+                <label>
+                    <input id=catsButton type="radio"><span>Cats</span><i class="fa-solid fa-cat"></i>
+                </label>
+                <br>
+                <button id=searchButton class="waves-effect waves-light btn" type="submit">Search</button>
+            </div>
+        </div>
+        <div id="animals-list" class="list">
+            <ul>
+                <li class="animal"></li>
+            </ul>
+
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://kit.fontawesome.com/11a0ffac50.js" crossorigin="anonymous"></script>
