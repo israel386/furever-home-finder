@@ -7,8 +7,11 @@ var tag = document.createElement("p")
 document.addEventListener('DOMContentLoaded', function () {
 	var elems = document.querySelectorAll('.modal');
 	var instances = M.Modal.init(elems);
-	var removeFact = document.getElementById("#cat-fact")
-	removeFact.parentElement.removeChild(tag)
+	var factBtn = document.getElementById("cat-fact-btn")
+
+	factBtn.addEventListener('click', getCatFact)
+	modalCloseBtn.addEventListener("click")
+
 });
 
 function getCatFact() {
@@ -22,20 +25,12 @@ function getCatFact() {
 			console.log(data);
 			for (var i = 0; i < data.length; i++) {
 
-				var tag = document.createElement("p")
-
-				tag.textContent = data[Math.floor(Math.random() * data.length)].text
-
-				// var text = document.createTextNode(data[Math.floor(Math.random() * data.length)].text);
-				// tag.appendChild(text);
-
 				var element = document.getElementById("cat-fact");
-				element.appendChild(tag)
-				return
+				element.textContent = data[Math.floor(Math.random() * data.length)].text
 			}
 		});
 }
-getCatFact()
+
 
 function getAccessToken() {
 	fetch('https://api.petfinder.com/v2/oauth2/token', {
