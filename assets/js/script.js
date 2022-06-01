@@ -86,10 +86,10 @@ document.addEventListener('DOMContentLoaded', function() {
             var name = animal.name;
             var animalsDiv = document.getElementById("animals");
             heading.innerText = name;
-            image.classList.add("");
+            // image.classList.add("");
             image.src = animal?.primary_photo_cropped.small;
             para.innerText = animal.description;
-            apiUrl.classList.add("");
+            // apiUrl.classList.add("");
             apiUrl.href = animal.url;
             animalsDiv.appendChild(heading.cloneNode(true));
             animalsDiv.appendChild(image.cloneNode(true));
@@ -106,6 +106,8 @@ document.addEventListener('DOMContentLoaded', function() {
             var typeCat = document.getElementById('catsButton'); // this line gets the zip code from the form entry
             // var typeRabbit = document.getElementById('rabbitsButton').value; // this line gets the zip code from the form entry
             
+
+
         if (typeDog[i].checked) {
             fetch(url + 'types/dog', {
         		method: 'GET', 
@@ -146,10 +148,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 var name = animal.name;
                 var animalsDiv = document.getElementById("animals");
                 heading.innerText = name;
-                image.classList.add("");
+                // image.classList.add("");
                 image.src = animal?.primary_photo_cropped.small;
                 para.innerText = animal.description;
-                apiUrl.classList.add("");
+                // apiUrl.classList.add("");
                 apiUrl.href = animal.url;
                 animalsDiv.appendChild(heading.cloneNode(true));
                 animalsDiv.appendChild(image.cloneNode(true));
@@ -164,10 +166,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 var name = animal.name;
                 var animalsDiv = document.getElementById("animals");
                 heading.innerText = name;
-                image.classList.add("");
+                // image.classList.add("");
                 image.src = animal?.primary_photo_cropped.small;
                 para.innerText = animal.description;
-                apiUrl.classList.add("");
+                // apiUrl.classList.add("");
                 apiUrl.href = animal.url;
                 animalsDiv.appendChild(heading.cloneNode(true));
                 animalsDiv.appendChild(image.cloneNode(true));
