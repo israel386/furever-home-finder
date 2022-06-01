@@ -46,8 +46,8 @@ SO THAT they can provide a home for a sheltered animal
 
 ## Acknowledgements
 
-[Petfinder API](https://www.petfinder.com/developers/v2/docs/)
-[Cat Facts API](https://alexwohlbruck.github.io/cat-facts/)
+*[Petfinder API](https://www.petfinder.com/developers/v2/docs/)
+*[Cat Facts API](https://alexwohlbruck.github.io/cat-facts/)
 
 ---
 © 2022 Project 1 Group 3. Confidential and Proprietary. All Rights Reserved.
