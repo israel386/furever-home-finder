@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var para = document.createElement('p');
     var image = document.createElement('img');
     var apiUrl = document.createElement("a");
+    var listEl = document.createElement("li");
+    var btn = document.createElement("button")
 
     // Executes GET request 
     function getAccessToken () {
@@ -65,96 +67,116 @@ document.addEventListener('DOMContentLoaded', function() {
                 Authorization: tokenType + ' ' + token
             },
         };
+        var params = "?limit=5"
 
-        fetch(url + 'animals', options)
+        fetch(url + 'animals' + params, options)
         .then(function (response) {
             return response.json();
         }).then(function (data) {
             console.log(data);
-            displayAvailable(data);
+            displayAvailable(data.animals);
         }).catch(function (error) { 
             console.log(error);
         });
-
-        function displayAvailable(data) {
-            for (var i = 0; i < data.length; i++) {
-            var animals = data.animals[i];
-            var animalsDiv = document.getElementById("animals");
-            var animalsName = animals.name;
-            
-            animalsDiv.innerHTML = animalsName;
-            animalsDiv.appendChild(heading);
-            image.src = animals.primary_photo_cropped.small;
-            // image.alt = dog.;
-            animalsDiv.appendChild(image);
-            // document.body.style.backgroundImage = "url('" + dog.primary_photo_cropped + "')";
-            apiUrl.src = animals.url;
-            animalsDiv.appendChild(apiUrl);
-            };
-        };
     };
 
-        // document.getElementById('searchButton').addEventListener('click', function(event) {
-        //     event.preventDefault();
-        //     var zip = document.getElementById('zip-code').value; // this line gets the zip code from the form entry
-        //     var typeDog = document.getElementById('dogsButton').value; // this line gets the zip code from the form entry
-        //     var typeCat = document.getElementById('catsButton').value; // this line gets the zip code from the form entry
-        //     // var typeRabbit = document.getElementById('rabbitsButton').value; // this line gets the zip code from the form entry
-                
-        //     fetch(url + 'animals', {
-        // 		method: 'GET', 
-        // 		headers: {
-        // 			'Content-Type': 'application/json',
-        // 			Authorization: 'Bearer ' + token
-        // 		},
+    function displayAvailable(data) {
+        data.forEach(function(animal) {
+            console.log(animal);
+            var name = animal.name;
+            var animalsDiv = document.getElementById("animals");
+            heading.innerText = name;
+            image.classList.add("");
+            image.src = animal?.primary_photo_cropped.small;
+            para.innerText = animal.description;
+            apiUrl.classList.add("");
+            apiUrl.href = animal.url;
+            animalsDiv.appendChild(heading.cloneNode(true));
+            animalsDiv.appendChild(image.cloneNode(true));
+            animalsDiv.appendChild(para.cloneNode(true));
+            animalsDiv.appendChild(apiUrl.cloneNode(true));
+        });
+    };
 
-        // 	}).then(function (response) {
-        // 		return response.json();
-        // 	}).then(function (data) {
-        // 		console.log(data);
-        //         displayDogs(data);
-        //         displayCats(data);
-        // 	}).catch(function (error) { 
-        // 		console.log(error);
-        // 	});
+    function searchButton() { 
+        document.getElementById('searchButton').addEventListener('click', function(event) {
+            event.preventDefault();
+            var zip = document.getElementById('zip-code').value; // this line gets the zip code from the form entry
+            var typeDog = document.getElementById('dogsButton'); // this line gets the zip code from the form entry
+            var typeCat = document.getElementById('catsButton'); // this line gets the zip code from the form entry
+            // var typeRabbit = document.getElementById('rabbitsButton').value; // this line gets the zip code from the form entry
+            
+        if (typeDog[i].checked) {
+            fetch(url + 'types/dog', {
+        		method: 'GET', 
+        		headers: {
+        			'Content-Type': 'application/json',
+        			Authorization: 'Bearer ' + token
+        		},
 
-        //     function displayDogs(data) {
-        //         // for (var i = 0; i < data.length; i++) {
-        //             const dog = data.animals[0];
-        //             const dogDiv = document.getElementById("dog");
-        //             const dogName = dog.name;
-        //             const heading = document.createElement("h1");
-        //             heading.innerHTML = dogName;
-        //             dogDiv.appendChild(heading);
-        //             const dogImg = document.createElement("img");
-        //             dogImg.src = dog.primary_photo_cropped.small;
-        //             dogDiv.appendChild(dogImg);
-        //             document.body.style.backgroundImage = "url('" + dog.primary_photo_cropped + "')";
-        //             const dogUrl = document.createElement("a");
-        //             dogUrl.src = dog.url;
-        //             dogDiv.appendChild(dogUrl);
-        //         // };
-        //     };
+        	}).then(function (response) {
+        		return response.json();
+        	}).then(function (data) {
+        		console.log(data);
+                displayDogs(data);
+        	}).catch(function (error) { 
+        		console.log(error);
+        	});
+        } else if (typeCat[i].checked) {
+            fetch(url + 'types/cat', {
+        		method: 'GET', 
+        		headers: {
+        			'Content-Type': 'application/json',
+        			Authorization: 'Bearer ' + token
+        		},
 
-        //     function displayCats(data) {
-        //         // for (var i = 0; i < data.length; i++) {
-        //             const cat = data.animals[1];
-        //             const catDiv = document.getElementById("cat");
-        //             const catName = cat.name;
-        //             const heading = document.createElement("h1");
-        //             heading.innerHTML = catName;
-        //             catDiv.appendChild(heading);
-        //             const catImg = document.createElement("img");
-        //             catImg.src = cat.primary_photo_cropped.small;
-        //             catDiv.appendChild(catImg);
-        //             document.body.style.backgroundImage = "url('" + cat.primary_photo_cropped + "')";
-        //             const catUrl = document.createElement("a");
-        //             catUrl.src = cat.url;
-        //             catDiv.appendChild(catUrl);
-        //         // };
-        //     };
-        // });
+        	}).then(function (response) {
+        		return response.json();
+        	}).then(function (data) {
+        		console.log(data);
+                displayCats(data);
+        	}).catch(function (error) { 
+        		console.log(error);
+        	});
+        }
+
+        function displayDogs(data) {
+            data.forEach(function(animal) {
+                console.log(animal);
+                var name = animal.name;
+                var animalsDiv = document.getElementById("animals");
+                heading.innerText = name;
+                image.classList.add("");
+                image.src = animal?.primary_photo_cropped.small;
+                para.innerText = animal.description;
+                apiUrl.classList.add("");
+                apiUrl.href = animal.url;
+                animalsDiv.appendChild(heading.cloneNode(true));
+                animalsDiv.appendChild(image.cloneNode(true));
+                animalsDiv.appendChild(para.cloneNode(true));
+                animalsDiv.appendChild(apiUrl.cloneNode(true));
+            });
+        };
+
+        function displayCats(data) {
+            data.forEach(function(animal) {
+                console.log(animal);
+                var name = animal.name;
+                var animalsDiv = document.getElementById("animals");
+                heading.innerText = name;
+                image.classList.add("");
+                image.src = animal?.primary_photo_cropped.small;
+                para.innerText = animal.description;
+                apiUrl.classList.add("");
+                apiUrl.href = animal.url;
+                animalsDiv.appendChild(heading.cloneNode(true));
+                animalsDiv.appendChild(image.cloneNode(true));
+                animalsDiv.appendChild(para.cloneNode(true));
+                animalsDiv.appendChild(apiUrl.cloneNode(true));
+            });
+        };
+    });
+};
 
     getAccessToken();
-    // availableAnimals();
 });
