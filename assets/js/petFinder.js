@@ -3,14 +3,25 @@ document.addEventListener('DOMContentLoaded', function () {
 	var secret = 'x2rtjtX1uuWWLBsSomBt1QHVNtXtjTBnL5EoGWLr';
 	var token, tokenType;
 
-	var section = document.createElement('section');
-    var div = document.createElement('div');
+	// var section = document.createElement('section');
+    // var div = document.createElement('div');
 	var heading = document.createElement('h2');
 	var para = document.createElement('p');
 	var image = document.createElement('img');
 	var apiUrl = document.createElement("a");
-	var listEl = document.createElement("li");
-	var btn = document.createElement("button")
+	// var listEl = document.createElement("li");
+	
+	// // Carousel future implementation
+	// var btn = document.createElement('div');
+	// btn.setAttribute("id", "carousel-btn");
+	// var div = document.createElement('div');
+	// div.className = "carousel-div";
+	// var newDiv = document.createElement('div');
+	// newDiv.className = "carousel-newDiv";
+	// var element = document.createElement('span');
+	// element.className("carousel-element")
+	// var elems = document.querySelectorAll('.carousel');
+    // var instances = M.Carousel.init(elems, options);
 
 	// Executes GET request 
 	function getAccessToken() {
@@ -92,11 +103,10 @@ document.addEventListener('DOMContentLoaded', function () {
 			para.innerText = animal.description;
 			// apiUrl.classList.add("");
 			apiUrl.href = animal.url;
-            animalsDiv.appendChild(div.cloneNode(true));
-			animalsDiv.appendChild(heading.cloneNode(true));
-			animalsDiv.appendChild(image.cloneNode(true));
-			animalsDiv.appendChild(para.cloneNode(true));
-			animalsDiv.appendChild(apiUrl.cloneNode(true));
+			animalsDiv.append(heading.cloneNode(true));
+			animalsDiv.append(image.cloneNode(true));
+			animalsDiv.append(para.cloneNode(true));
+			animalsDiv.append(apiUrl.cloneNode(true));
 		});
 	};
 
@@ -127,14 +137,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log(error);
             });
         } else if (typeCats.checked) {
-            fetch(url + 'animals?type=cat&location=' + zip, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: 'Bearer ' + token
-                },
-
-            }).then(function (response) {
+            fetch(url + 'animals?type=cat&location=' + zip, options)
+			.then(function (response) {
                 return response.json();
             }).then(function (data) {
                 console.log(data);

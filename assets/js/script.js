@@ -1,7 +1,4 @@
 var searchButton = document.getElementById("searchButton")
-var key = 'dKli27YVN1Xw6LHvN9NAyhYR5dEydVxXXojInFquj2ZIyetfC6'
-var secret = 'x2rtjtX1uuWWLBsSomBt1QHVNtXtjTBnL5EoGWLr'
-var token, tokenType;
 var tag = document.createElement("p")
 
 document.addEventListener('DOMContentLoaded', function () {
